@@ -13,7 +13,7 @@ def main():
     run_test_draw_circles()
     # Un-comment the next lines when you are ready to use them.
     run_test_better_draw_circles()
-    # run_test_even_better_draw_circles()
+    run_test_even_better_draw_circles()
 
 
 # ----------------------------------------------------------------------
@@ -143,6 +143,25 @@ def better_draw_circles(n):
 #   In testing your even_better_draw_circles function,
 #   can you make some fun pictures?
 # ----------------------------------------------------------------------
+
+def run_test_even_better_draw_circles():
+    print()
+    print('--------------------------------------------------')
+    print('Testing  better_draw_circles:  See graphics window')
+    print('--------------------------------------------------')
+    even_better_draw_circles(100,100,10,5,0.50)
+
+def even_better_draw_circles(x,y,r,n,speed):
+    window = rg.RoseWindow(400, 400)
+
+    center = rg.Point(x, y)
+    for k in range(n+1):
+        circle = rg.Circle(center, r * k)
+        circle.attach_to(window)
+        window.render(speed)  # Pauses for 0.05 seconds after rendering.
+
+    window.close_on_mouse_click()
+
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
