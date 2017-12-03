@@ -142,7 +142,7 @@ def runTestOnMethod(function, testCases, function_name):
                                                      ea[i])
 
         sys.stdout = old_stdout
-        # print(functionName, "Total:", str(correct) + "/" + str(total))
+        print(function_name, "Total:", str(correct) + "/" + str(total))
 
         print(resultsToPrint)
     except Exception as e:
